@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.example.pdfreaderapplication.entity.HistoryMarkEntity;
+import com.google.android.gms.internal.ads.zzbhs;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -27,6 +29,8 @@ public class HistoryDeleteAdapter extends ArrayAdapter<HistoryMarkEntity> {
     Context context;
     ArrayList<HistoryMarkEntity> all_pdf;
     ViewHolder holder=new ViewHolder();
+   ArrayList<String> list;
+
     public HistoryDeleteAdapter(Context context, ArrayList<HistoryMarkEntity> all_pdf) {
         super(context, R.layout.history_delete_layout, all_pdf);
         this.context=context;
@@ -76,6 +80,17 @@ public class HistoryDeleteAdapter extends ArrayAdapter<HistoryMarkEntity> {
         holder.historyDate.setText(ct);
         holder.deleteImageView=(ImageView)view.findViewById(R.id.h_historydeleteImage);
         holder.checkBox=(CheckBox)view.findViewById(R.id.h_historycheckbox);
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    list.add(all_pdf.get(position).getHistoryMarkFileName());
+                    HistoryMarkEntity hs= new HistoryMarkEntity();
+                    hs.setListData(list);
+                }
+            }
+        });
+
         holder.deleteImageView.setTag(new Integer(position));
         holder.deleteImageView.setOnClickListener(new View.OnClickListener() {
             @Override

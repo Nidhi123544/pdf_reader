@@ -27,6 +27,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity  {
     ListView history_list;
@@ -120,14 +121,30 @@ public class HistoryActivity extends AppCompatActivity  {
                 alert.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                       for(int i=0;i<history_list.getCount();i++){
-                            LinearLayout itemLayout=(LinearLayout)history_list.getChildAt(i);
-                            CheckBox cb=(CheckBox)itemLayout.findViewById(R.id.h_historycheckbox);
-                            if(cb.isChecked()){
-                                listItem.remove(listItem.get(i));
+                                HistoryMarkEntity hs= new HistoryMarkEntity();
+//                                hs.getListData();
+                        for(int i=0;i<listItem.size();i++) {
+                            if (hs.getListData().contains(listItem.get(i).getHistoryMarkFileName())) {
+                                listItem.remove(i);
                                 pdfHistoryAdapter.notifyDataSetChanged();
                             }
                         }
+//                                for(int j=0; j < listItem.size(); j++){
+//                                    for (int i=0;i<hs.getListData().size();i++){
+//
+//                                    }
+//                                    listItem.removeAll();
+//                                    pdfHistoryAdapter.notifyDataSetChanged();
+//                            }
+
+                       /*for(int i=0;i<history_list.getCount();i++){
+                            LinearLayout itemLayout=(LinearLayout)history_list.getChildAt(i);
+                           CheckBox cb=(CheckBox)itemLayout.findViewById(R.id.h_historycheckbox);
+                            if(cb.isChecked()){
+                                //listItem.remove(listItem.get(i));
+                               // pdfHistoryAdapter.notifyDataSetChanged();
+                            }
+                        }*/
                        // final int size=history_list.getChildCount();
                         /*for(int i=0;i<history_list.getChildCount();i++){
                             LinearLayout itemLayout=(LinearLayout)history_list.getChildAt(i);
