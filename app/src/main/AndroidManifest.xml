@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.pdfreaderapplication">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/pdf"
+        android:roundIcon="@mipmap/pdf"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PdfReaderApplication">
+        <activity android:name=".Mode" />
+        <activity android:name=".Home" />
+        <activity android:name=".About" />
+        <activity android:name=".Dashboard" />
+        <activity
+            android:name=".HistoryActivity"
+            android:label="History" />
+        <activity
+            android:name=".BookmarkActivity"
+            android:label="Bookmark" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.PdfReaderApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1016901275106207~7063990239" />
+    </application>
+
+</manifest>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard"
+        android:icon="@mipmap/hori"/>
+    <item
+        android:id="@+id/homedash"
+        android:title="Home"
+        android:icon="@mipmap/page_jump"/>
+    <item
+        android:id="@+id/about"
+        android:title="About"
+        android:icon="@mipmap/save"/>
+    <item
+        android:id="@+id/newMode"
+        android:title="Mode"
+        android:icon="@drawable/ic_baseline_bedtime_24"/>
+</menu>

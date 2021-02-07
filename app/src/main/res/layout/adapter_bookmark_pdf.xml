@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:id="@+id/iv_bookmark_image"
+        android:scaleType="fitXY"
+        android:layout_marginTop="5dp"
+        android:src="@mipmap/pdf"/>
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_bookmark_name"
+            android:text="File Name"
+            android:layout_toRightOf="@+id/iv_bookmark_image"
+            android:textStyle="normal"
+            android:textSize="15dp"
+            android:maxLength="20"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="date"
+            android:id="@+id/bookmarkDate"
+            android:layout_marginLeft="12dp"
+            />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/bookmarkdeleteImage"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/save_selected"/>
+
+</LinearLayout>
